@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wanandroid_dev/pages/SystemPage.dart';
 import './pages/HomePage.dart';
 class MainPage extends StatefulWidget{
   @override
@@ -19,7 +20,7 @@ class _MainPageState extends State<MainPage>{
     pageData = new List();
     pageData
       ..add(HomePage())
-      ..add(HomePage())
+      ..add(SystemPage())
       ..add(HomePage())
       ..add(HomePage())
       ..add(HomePage());
