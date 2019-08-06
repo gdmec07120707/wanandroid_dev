@@ -158,8 +158,8 @@ class _HomePageState extends State<HomePage> {
     return new Future.delayed(new Duration(seconds: 2), () {
       setState(() {
         pageIndex = 0;
-        bannerList.clear();
-        homeList.clear();
+        //bannerList.clear();
+        //homeList.clear();
         this.getBannerList();
         this.getHomeList();
       });

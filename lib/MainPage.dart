@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wanandroid_dev/pages/HotSearchPage.dart';
+import 'package:wanandroid_dev/pages/ProjectPage.dart';
 import 'package:wanandroid_dev/pages/SystemPage.dart';
 import './pages/HomePage.dart';
 class MainPage extends StatefulWidget{
@@ -23,7 +24,7 @@ class _MainPageState extends State<MainPage>{
       ..add(HomePage())
       ..add(SystemPage())
       ..add(HotSearchPage())
-      ..add(HomePage())
+      ..add(ProjectPage())
       ..add(HomePage());
 
   }
