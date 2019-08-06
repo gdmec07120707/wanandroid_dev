@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wanandroid_dev/pages/HotSearchPage.dart';
+import 'package:wanandroid_dev/pages/MinePage.dart';
 import 'package:wanandroid_dev/pages/ProjectPage.dart';
 import 'package:wanandroid_dev/pages/SystemPage.dart';
 import './pages/HomePage.dart';
@@ -25,7 +26,7 @@ class _MainPageState extends State<MainPage>{
       ..add(SystemPage())
       ..add(HotSearchPage())
       ..add(ProjectPage())
-      ..add(HomePage());
+      ..add(MinePage());
 
   }
 
