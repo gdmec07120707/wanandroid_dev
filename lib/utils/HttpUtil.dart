@@ -1,3 +1,4 @@
+import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:wanandroid_dev/bean/Api.dart';
 
@@ -33,6 +34,7 @@ class HttpUtil {
       headers: {},
     );
     dio = new Dio(options);
+    dio.interceptors.add(CookieManager(CookieJar()));
   }
 
   get(url,

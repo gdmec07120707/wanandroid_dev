@@ -21,4 +21,10 @@ class Api {
 
   ///项目列表http://www.wanandroid.com/project/list/1/json?cid=294
   static final String PROJECT_LIST = HOST + "project/list/";
+
+  ///登录 https://www.wanandroid.com/user/login
+  static final String LOGIN = HOST + "user/login";
+
+  ///注册 https://www.wanandroid.com/user/register
+  static final String REGISTER = HOST + "user/register";
 }

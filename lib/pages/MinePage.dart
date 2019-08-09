@@ -1,12 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:wanandroid_dev/utils/CommonUtil.dart';
-
+import 'package:wanandroid_dev/utils/NavigatorUtil.dart';
+import 'package:wanandroid_dev/pages/LoginPage.dart';
+import 'package:wanandroid_dev/utils/SpUtil.dart';
+import 'package:wanandroid_dev/app/Constant.dart';
 class MinePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new _MinePage();
 }
 
 class _MinePage extends State<MinePage> {
+  String _username;
+  bool isLogin;
+
+  @override
+  void setState(fn) {
+    // TODO: implement setState
+    super.setState(fn);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getUser();
+  }
+
+  void _getUser() async{
+    SpUtils.getString(Constant.spUserName).then(
+            (username){
+              print("--------------"+username);
+          setState((){
+            if(username!=null){
+              _username = username;
+            }else{
+              _username = "";
+            }
+          });
+        }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,6 +52,7 @@ class _MinePage extends State<MinePage> {
       body: buildContent(),
     );
   }
+
 
   Widget buildContent() {
     return new Column(
@@ -38,7 +73,7 @@ class _MinePage extends State<MinePage> {
                           image: AssetImage('images/head.jpg'))),
                 ),
                 new Text(
-                  "用户名",
+                  _username.toString(),
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 )
               ],
@@ -102,7 +137,11 @@ class _MinePage extends State<MinePage> {
           ),
         ),
         new GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, new MaterialPageRoute(
+                builder: (context)=>new LoginPage()
+            ));
+          },
           child: Container(
             alignment: Alignment(0.0, 0.0),
             margin:
@@ -120,4 +159,6 @@ class _MinePage extends State<MinePage> {
       ],
     );
   }
+
+
 }
