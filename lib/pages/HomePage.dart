@@ -5,6 +5,7 @@ import 'package:wanandroid_dev/bean/BannerItem.dart' as bannerItem;
 import 'package:wanandroid_dev/bean/HomeItem.dart' as homeItem;
 import 'package:banner_view/banner_view.dart';
 import 'package:flutter_refresh/flutter_refresh.dart';
+import 'package:wanandroid_dev/utils/NavigatorUtil.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -68,7 +69,9 @@ class _HomePageState extends State<HomePage> {
           ? new BannerView(
               bannerList.map((bannerItem.BannerData item) {
                 return new GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      NavigatorUtil.toDetails(context, item.url, item.title);
+                    },
                     child: new Image.network(
                       item.imagePath,
                       fit: BoxFit.cover,
@@ -92,7 +95,9 @@ class _HomePageState extends State<HomePage> {
   Widget buildList(homeItem.HomeItemDataData item) {
     return new Card(
       child: new InkWell(
-        onTap: () {},
+        onTap: () {
+          NavigatorUtil.toDetails(context, item.link, item.title);
+        },
         child: new ListTile(
           title: new Row(
             children: <Widget>[

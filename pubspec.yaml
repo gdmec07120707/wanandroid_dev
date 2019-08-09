@@ -31,6 +31,8 @@ dependencies:
   fluttertoast: ^3.0.4     #toast
   shared_preferences: ^0.4.3 #sharePreferences
   cookie_jar: ^1.0.0    #cookie持久化管理
+  flutter_webview_plugin: ^0.2.1+2   #Webview
+  flutter_html_textview: "^0.2.6" #富文本
 
 dev_dependencies:
   flutter_test:
