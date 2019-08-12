@@ -30,4 +30,7 @@ class Api {
 
   ///注册 https://www.wanandroid.com/user/register
   static final String REGISTER = HOST + "user/register";
+
+  ///搜索
+  static final String SEARCH_WORD = HOST + "article/query/";
 }

@@ -7,6 +7,7 @@ import 'package:wanandroid_dev/utils/HttpUtil.dart';
 import 'package:wanandroid_dev/bean/ProjectTree.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_refresh/flutter_refresh.dart';
+import 'package:wanandroid_dev/utils/NavigatorUtil.dart';
 
 class ProjectPage extends StatefulWidget {
   @override
@@ -118,6 +119,7 @@ class _ListPage extends State<ListPage> {
                       return new GestureDetector(
                         onTap: () {
                           ///跳转到详情
+                          NavigatorUtil.toDetails(context, item.link, item.title);
                         },
                         child: new Card(
                           child: new Padding(

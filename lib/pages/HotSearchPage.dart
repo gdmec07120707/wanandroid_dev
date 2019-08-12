@@ -6,6 +6,7 @@ import 'package:wanandroid_dev/bean/HotSearchKey.dart';
 import 'package:wanandroid_dev/bean/HotSearchFriend.dart';
 import 'package:wanandroid_dev/utils/HttpUtil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:wanandroid_dev/utils/NavigatorUtil.dart';
 
 class HotSearchPage extends StatefulWidget {
   @override
@@ -127,7 +128,9 @@ class _HotSearchPage extends State<HotSearchPage> {
           ),
           Expanded(
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                NavigatorUtil.toSearchResult(context, controller.text);
+              },
               padding:
                   EdgeInsets.only(left: 5.0, top: 3.0, right: 5.0, bottom: 2.0),
               color: Colors.blue,
@@ -178,6 +181,10 @@ class _HotSearchPage extends State<HotSearchPage> {
         child: new Wrap(
           children: hotKeyList.map((item) {
             return new GestureDetector(
+              onTap: () {
+                ///热搜被点击
+                NavigatorUtil.toSearchResult(context, item.name);
+              },
               child: Container(
                 decoration: new BoxDecoration(
                     color: colors[randomNum()],
@@ -191,9 +198,7 @@ class _HotSearchPage extends State<HotSearchPage> {
                   style: new TextStyle(color: Colors.white, fontSize: 16.0),
                 ),
               ),
-              onTap: () {
-                ///热搜被点击
-              },
+
             );
           }).toList(),
         ));
@@ -207,6 +212,9 @@ class _HotSearchPage extends State<HotSearchPage> {
       child: new Wrap(
         children: hotFriendList.map((item) {
           return new GestureDetector(
+            onTap: () {
+              NavigatorUtil.toDetails(context, item.link,item.name);
+            },
             child: new Container(
               decoration: new BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(15)),
@@ -219,9 +227,6 @@ class _HotSearchPage extends State<HotSearchPage> {
                 style: new TextStyle(color: colors[randomNum()], fontSize: 16),
               ),
             ),
-            onTap: () {
-              ///常用网站被点击
-            },
           );
         }).toList(),
       ),
