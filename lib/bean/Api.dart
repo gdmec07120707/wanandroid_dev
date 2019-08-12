@@ -10,6 +10,9 @@ class Api {
   ///知识体系http://www.wanandroid.com/tree/json
   static final String KNOWLEDGE_TREE = HOST + "tree/json";
 
+  ///具体标签下的文章http://www.wanandroid.com/article/list/0/json?cid=168
+  static final String KNOWLEDGE_LIST = HOST + "article/list/";
+
   ///热门搜索==>http://www.wanandroid.com/hotkey/json
   static final String HOT_WORD = HOST + "hotkey/json";
 

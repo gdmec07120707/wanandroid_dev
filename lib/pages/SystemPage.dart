@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wanandroid_dev/bean/Api.dart';
 import 'package:wanandroid_dev/utils/HttpUtil.dart';
 import 'package:wanandroid_dev/bean/SystemTreeEntity.dart';
+import 'package:wanandroid_dev/utils/NavigatorUtil.dart';
 
 class SystemPage extends StatefulWidget {
   @override
@@ -49,7 +50,9 @@ class _SystemPageState extends State<SystemPage> {
   Widget buildList(SystemTreeData item) {
     return new Card(
       child: new InkWell(
-        onTap: () {},
+        onTap: () {
+          NavigatorUtil.toSystemList(context, item.children, item.name);
+        },
         child: new ListTile(
           title: new Row(
             children: <Widget>[
